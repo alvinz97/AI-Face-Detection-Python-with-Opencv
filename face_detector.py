@@ -2,7 +2,7 @@ import cv2
 
 face_data = cv2.CascadeClassifier('opencv/haarcascade_frontalface_default.xml')
 
-# img = cv2.imread('images/me.jpg')
+# img = cv2.imread('images/me.jpg') # Read the images from the local device
 webcam = cv2.VideoCapture(0) # Capture the video from the default webcam which is 0
 
 while True: # Infinate Loop
@@ -14,7 +14,7 @@ while True: # Infinate Loop
     exact_face_coordinates = face_data.detectMultiScale(gray_scaled_img) # this will return exact face coordinates
 
     for (x, y, w, h) in exact_face_coordinates: # This will loop through the faces and draw the rectangle according to their coordinates
-        cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2) # This represent ( scr (x Coordinates, y Coordinates), (x + width, y + height) (B, G, R), stroke)
+        cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2) # This represents ( scr (x Coordinates, y Coordinates), (x + width, y + height) (B, G, R), stroke)
 
     # print(exact_face_coordinates)
 
